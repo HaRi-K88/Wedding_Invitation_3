@@ -1,0 +1,74 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    min-height: 100vh;
+    background: radial-gradient(circle, #ca2b2bd6, #040202);
+    overflow: hidden;
+}
+span
+{
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+    animation: fadeInOut 1s linear infinite;
+}
+@keyframes fadeInOut
+{
+    0%,100%
+    {
+        opacity: 0;
+    }
+    20%,80%
+    {
+        opacity: 1;
+    }
+}
+span::before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(heart2.png);
+    background-size: cover;
+    animation: moveShape 1s linear infinite;
+}
+@keyframes moveShape
+{
+    0%
+    {
+        transform: translate(0) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(100px) rotate(360deg);
+    }
+}
+
+.card{
+    position:relative;
+    width:500px;
+    height:700px;
+    top: 19px;
+    left: 510px;
+    background: #fff;
+    transform:perspective(1000px);
+    box-shadow:10px 20px 40px rgba(0,0,0,0.25);
+    transition: 1s;
+  }
+
+  .card .details .content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style:preserve-3d;
+    backface-visibility: hidden;
+  }
